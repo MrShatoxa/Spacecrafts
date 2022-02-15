@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>ReferenceBook</title>
+    <link rel="stylesheet" type="text/css" href="/static/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="/static/css/style.css">
+</head>
+<body>
+   <header id="header">
+   	  <div class="header_head_1">
+   	  	<div class="container">
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-12">
+                    <div class="head_name">
+                        <h1>Космические аппараты</h1>
+                    </div>
+                </div>
+            </div>
+   	  		<div class="row">
+   	  			<div class="col-lg-12 col-md-12 col-sm-12 col-12">
+   	  				<nav class="menu_elements">
+   	  					<a href="/" class="element_1">Главная</a>
+   	  					<a href="" class="element_3">Создание</a>
+   	  				</nav>
+   	  			</div>
+   	  		</div>
+   	  	</div>
+   	  </div>
+  </header>
+   <section id="base">
+       <div class="base_db">
+           <div class="container">
+               <div class="row">
+                   <div class="col-lg-12 col-md-12 col-sm-12 col-12">
+                       <div class="db_create">
+                             <form method="POST" action="create/">
+                                 {% csrf_token %}
+                                <input type="text" name="name" placeholder="Название" size="70"><br/>
+                            
+                                <input type="text" name="country" placeholder="Страна" size="70"><br/>
+
+                                <input  type="text" name="manufacturer" placeholder="Производитель" size="70"><br/>
+
+                                <input type="text" name="purpose" placeholder="Назначение" size="70"><br/>
+
+                                <input type="text" name="orbit" placeholder="Орбита" size="70"><br/>
+
+                                <input type="text" name="year" placeholder="Год запуска" size="70"><br/>
+
+                                <input id="submit" type="submit" value="Добавить">
+                            </form>
+
+                       </div>
+                   </div>
+               </div>
+           </div>
+       </div>
+   </section>
+   <footer id="footer">
+       <div class="footer_end">
+           <div class="container">
+               <div class="row">
+                 <div class="col-lg-12 col-md-12 col-sm-12 col-12">
+                     <div class="end_info">
+                         <div class="authors">Автор:</div>
+                         <div class="author_1">Шатохин Е.О.</div>
+
+                     </div>
+                 </div>
+               </div>
+           </div>
+       </div>
+   </footer>
+ <script type="text/javascript" src="/static/js/script.js"></script>
+<script src="https://use.fontawesome.com/b1e291745d.js"></script>
+</body>
+</html>

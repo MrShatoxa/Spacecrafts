@@ -1,0 +1,211 @@
+html {
+   font-size: 16px;
+   overflow-x: hidden;
+   height: 100%;
+   margin: 0;
+   padding: 0;
+
+}
+body {
+	font-family: 'Lato' ;
+    background:  url(../img/space.jpg)  no-repeat fixed center #dae0e5;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+     background-size: cover;
+}
+a, a:hover, a:active, a:focus,
+button, input, button:hover, button:active, button:focus,
+input:focus, input:active {
+	text-decoration: none;
+	outline: none;
+}
+header {
+    background: #dae0e5;
+    width: 100%;
+    height: 180px;
+    opacity: 80%;
+}
+* {
+	-moz-transition: all 0.3s ease;
+	-webkit-transition-property: all;
+	-webkit-transition-duration: 0.3s;
+	-webkit-transition-timing-function: ease;
+}
+
+nav {
+    width: 100%;
+    height: auto;
+    margin: 20px auto;
+    text-align: center;
+}
+a  {
+    box-sizing: border-box;
+    display: inline-block;
+    padding: 0px 60px;
+    font-size: 35px;
+    color: #1d2124;
+    letter-spacing:1.3px;
+}
+a:hover {
+    background: #1b1e21;
+    color: #dae0e5;
+    border-radius:  15px;
+}
+.head_name h1{
+    text-align: center;
+    font-weight: bold;
+    line-height: 72px;
+    font-size: 44px;
+    color: #1d2124;
+}
+#base {
+    width: 100%;
+    height: auto;
+     min-height: 100%;
+    margin: 40px 0;
+}
+
+footer {
+    width: 100%;
+    height: 100px;
+    background: #dae0e5;
+    opacity: 80%;
+    margin: 0px;
+    position: fixed;
+    bottom: 0;
+
+}
+.end_info {
+    height: 150px;
+    margin-left: 30px;
+}
+
+.authors, .author_1 {
+    margin: 30px 10px;
+    font-size: 23px;
+    height: 30px;
+    width: 170px;
+    float: left;
+    color: #1d2124;
+}
+
+.db_integration{
+    background: ghostwhite;
+    overflow: auto;
+    z-index: 10;
+    height: auto;
+    width: 100%;
+    font-size: 24px;
+    text-align: center;
+}
+
+.db_create{
+    overflow: auto;
+    height: auto;
+    width: 100%;
+    font-size: 28px;
+    text-align: center;
+}
+form input {
+    background: ghostwhite;
+    padding: 5px;
+    margin: 3px;
+
+}
+.full_info {
+    border: 0;
+    background: ghostwhite;
+    height: auto;
+    padding-right: 0px;
+    padding-left: 0px;
+    font-size: 24px;
+    text-align: center;
+}
+
+.full_info:hover {
+     background: #1b1e21;
+    color: #dae0e5;
+    border-radius:  10px;
+}
+
+
+.trash{
+    padding: 0px;
+    width: 50px;
+    height: 50px;
+}
+
+.trash i {
+    text-align: center;
+    vertical-align: middle;
+}
+.trash i:active {
+    transform: scale(1.1);
+}
+#submit {
+    color: #1d2124;
+    width: 300px;
+    margin: 15px 0px;
+    padding: 5px;
+    font-size: 28px;
+    text-align: center;
+}
+#submit:hover{
+    background: #dae0e5;
+}
+#submit:active {
+    transform: scale(1.1);
+}
+
+#information {
+    width: 100%;
+    height: auto;
+    margin: 40px 0;
+}
+
+.article_content {
+  display:inline-block;
+  overflow: auto;
+    height: auto;
+    width: 100%;
+    font-size: 20px;
+    padding: 0px;
+    margin:30px 0px 0px 0px;
+}
+
+.individual {
+    width: 100%;
+    height: auto;
+    background: ghostwhite;
+    overflow: auto;
+    z-index: 10;
+    font-size: 24px;
+    padding: 5px;
+}
+
+.title_article h1{
+    text-align: center;
+    font-weight: bold;
+    line-height: 72px;
+    font-size: 44px;
+    color: #1d2124;
+    margin-bottom: 30px;
+}
+
+.article_create {
+    overflow: auto;
+    height: auto;
+    width: 100%;
+    font-size: 20px;
+    text-align: center;
+    margin-top: 100px;
+}
+.title_edit h2 {
+    text-align: center;
+    font-weight: bold;
+    line-height: 72px;
+    font-size: 44px;
+    color: #1d2124;
+    background: #dae0e5;
+}
