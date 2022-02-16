@@ -37,17 +37,17 @@
                        <div class="db_create">
                              <form method="POST" action="create/">
                                  {% csrf_token %}
-                                <input type="text" name="name" placeholder="Название" size="70"><br/>
+                                <input required type="text" name="name" placeholder="Название" size="70"><br/>
                             
-                                <input type="text" name="country" placeholder="Страна" size="70"><br/>
+                                <input  required type="text" name="country" placeholder="Страна" size="70"><br/>
 
-                                <input  type="text" name="manufacturer" placeholder="Производитель" size="70"><br/>
+                                <input required type="text" name="manufacturer" placeholder="Производитель" size="70"><br/>
 
-                                <input type="text" name="purpose" placeholder="Назначение" size="70"><br/>
+                                <input required type="text" name="purpose" placeholder="Назначение" size="70"><br/>
 
-                                <input type="text" name="orbit" placeholder="Орбита" size="70"><br/>
+                                <input required type="text" name="orbit" placeholder="Орбита" size="70"><br/>
 
-                                <input type="text" name="year" placeholder="Год запуска" size="70"><br/>
+                                <input required type="text" name="year" placeholder="Год запуска" size="70"><br/>
 
                                 <input id="submit" type="submit" value="Добавить">
                             </form>

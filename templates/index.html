@@ -35,13 +35,13 @@
                <div class="row">
                    <div class="col-lg-12 col-md-12 col-sm-12 col-12">
                        <table border="1" class="db_integration">
-                           <tr><th>Название</th>
-                               <th>Страна</th>
-                               <th>Производитель</th>
-                               <th>Задача</th>
-                               <th>Орбита</th>
-                               <th>Год запуска</th>
-                               <th>Удаление объекта</th></tr>
+                           <tr><th class="names_table">Название</th>
+                               <th class="names_table">Страна</th>
+                               <th class="names_table">Производитель</th>
+                               <th class="names_table">Задача</th>
+                               <th class="names_table">Орбита</th>
+                               <th class="names_table">Год запуска</th>
+                               <th class="names_table">Удаление объекта</th></tr>
                            {% for item in spacecrafts_list %}
                                <tr><td><a class="full_info" href="info/{{item.id}}">{{ item.name }}</a></td>
                                    <td>{{item.country }}</td>

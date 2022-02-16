@@ -17,6 +17,7 @@ def edit(request):
     return render(request, 'edit.html')
 
 def create(request):
+
     if request.method == "POST":
         spacecraft = Spacecrafts()
         spacecraft.name = request.POST.get("name")
