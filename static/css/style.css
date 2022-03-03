@@ -10,7 +10,7 @@ body {
     display: flex;
     flex-direction: column;
     height: 100vh;
-	font-family: 'Lato' ;
+	font-family: 'Lato';
     background:  url(../img/space.jpg)  no-repeat fixed center #dae0e5;
     -webkit-background-size: cover;
     -moz-background-size: cover;
