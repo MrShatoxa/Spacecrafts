@@ -18,9 +18,9 @@ from django.urls import path
 from ReferenceBook.views import index, info, edit, create, delete, edit_article
 
 urlpatterns = [
-    path('', index),
+    path('', index, name='index'),
     path('info/<int:spacecrafts_id>/', info),
-    path('edit/', edit),
+    path('edit/', edit, name='edit'),
     path('admin/', admin.site.urls),
     path('edit/create/', create),
     path('delete/<int:id>/', delete),
