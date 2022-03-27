@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from ReferenceBook.views import index, info, edit, create, delete, edit_article
+from ReferenceBook.views import index, info, edit, create, delete, edit_article, fix
 
 urlpatterns = [
     path('', index, name='index'),
@@ -24,5 +24,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('edit/create/', create),
     path('delete/<int:id>/', delete),
-    path('info/<int:spacecrafts_id>/edit_article/', edit_article)
+    path('info/<int:spacecrafts_id>/edit_article/', edit_article),
+    path('fix/<int:id>/', fix),
 ]

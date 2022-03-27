@@ -35,6 +35,26 @@ def create(request):
         article.save()
     return HttpResponseRedirect("/")
 
+
+def fix(request, id):
+    try:
+        spacecraft = Spacecrafts.objects.get(id=id)
+
+        if request.method == "POST":
+
+            spacecraft.name = request.POST.get("name")
+            spacecraft.country = request.POST.get("country")
+            spacecraft.manufacturer = request.POST.get("manufacturer")
+            spacecraft.purpose = request.POST.get("purpose")
+            spacecraft.orbit = request.POST.get("orbit")
+            spacecraft.year = request.POST.get("year")
+            spacecraft.save()
+            return HttpResponseRedirect("/")
+        else:
+            return render(request, "fixes.html", {"spacecraft": spacecraft})
+    except Spacecrafts.DoesNotExist:
+        return HttpResponseNotFound("<h2>Такого обьекты нет</h2>")
+
 def delete(request, id):
     try:
         spacecraft = Spacecrafts.objects.get(id=id)

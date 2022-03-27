@@ -13,14 +13,16 @@
                                <th class="names_table">Задача</th>
                                <th class="names_table">Орбита</th>
                                <th class="names_table">Год запуска</th>
-                               <th class="names_table">Удаление объекта</th></tr>
+                               <th class="names_table">Изменить</th>
+                               <th class="names_table">Удалить</th></tr>
                            {% for item in spacecrafts_list %}
                                <tr><td><a class="full_info" href="info/{{item.id}}">{{ item.name }}</a></td>
                                    <td>{{item.country }}</td>
                                    <td>{{item.manufacturer }}</td>
                                    <td>{{item.purpose }}</td>
                                    <td>{{item.orbit }}</td><td>{{item.year }}</td>
-                                   <td><a class="trash" href="delete/{{item.id}}"><i class="fa fa-trash-o" aria-hidden="true"></i></a></td></tr>
+                                   <td><a class="icons" href="fix/{{item.id}}"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a></td>
+                                   <td><a class="icons" href="delete/{{item.id}}"><i class="fa fa-trash-o" aria-hidden="true"></i></a></td></tr>
                            {% endfor %}
                        </table>
                    </div>

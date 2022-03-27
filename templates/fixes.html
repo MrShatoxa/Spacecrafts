@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% block content %}
+ <section id="base">
+       <div class="base_db">
+           <div class="container">
+               <div class="row">
+                   <div class="col-lg-12 col-md-12 col-sm-12 col-12">
+                       <div class="db_create">
+                        <form method="POST" >
+                            {% csrf_token %}
+                         <input required type="text" name="name" value="{{spacecraft.name}}" size="70"><br/>
+
+                         <input  required type="text" name="country" value="{{spacecraft.country}}" size="70"><br/>
+
+                         <input required type="text" name="manufacturer" value="{{spacecraft.manufacturer}}" size="70"><br/>
+
+                         <input required type="text" name="purpose" value="{{spacecraft.purpose}}" size="70"><br/>
+
+                         <input required type="text" name="orbit" value="{{spacecraft.orbit}}" size="70"><br/>
+
+                         <input required type="text" name="year" value="{{spacecraft.year}}" size="70"><br/>
+
+                         <input id="submit" type="submit" value="Сохранить изменения">
+                        </form>
+                       </div>
+                   </div>
+               </div>
+           </div>
+       </div>
+   </section>
+
+{% endblock %}
