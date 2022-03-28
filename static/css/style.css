@@ -219,3 +219,16 @@ form input {
     color: #1d2124;
     background: #dae0e5;
 }
+.pagination{
+    width: max-content;
+    margin: 100px 0;
+}
+.step-links {
+    border-radius: 20px;
+    background: whitesmoke;
+
+}
+.current{
+  padding:0 10px;
+  font-size: 22px;
+}

@@ -15,7 +15,7 @@
                                <th class="names_table">Год запуска</th>
                                <th class="names_table">Изменить</th>
                                <th class="names_table">Удалить</th></tr>
-                           {% for item in spacecrafts_list %}
+                           {% for item in page_obj %}
                                <tr><td><a class="full_info" href="info/{{item.id}}">{{ item.name }}</a></td>
                                    <td>{{item.country }}</td>
                                    <td>{{item.manufacturer }}</td>
@@ -25,9 +25,11 @@
                                    <td><a class="icons" href="delete/{{item.id}}"><i class="fa fa-trash-o" aria-hidden="true"></i></a></td></tr>
                            {% endfor %}
                        </table>
+                       {% include "pagination.html" with page=posts %}
                    </div>
                </div>
            </div>
+
        </div>
    </section>
 {% endblock %}

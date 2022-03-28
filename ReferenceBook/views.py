@@ -3,11 +3,23 @@ from django.http import HttpResponse
 from ReferenceBook.models import Spacecrafts, Article
 from django.http import HttpResponseRedirect
 from django.http import HttpResponseNotFound
+from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
 
 def index(request):
     space_crafts = Spacecrafts.objects.all()
-    return render(request, 'index.html', {"spacecrafts_list":space_crafts})
+    paginator = Paginator(space_crafts, 5)
+    page = request.GET.get('page')
+    page_obj = paginator.get_page(page)
+    try:
+        posts = paginator.page(page)
+    except PageNotAnInteger:
+        # Если страница не является целым числом, поставим первую страницу
+        posts = paginator.page(1)
+    except EmptyPage:
+        # Если страница больше максимальной, доставить последнюю страницу результатов
+        posts = paginator.page(paginator.num_pages)
+    return render(request, 'index.html', { 'page': page, 'posts': posts, "page_obj": page_obj})
 
 def info(request, spacecrafts_id):
     article = Article.objects.get(pk=spacecrafts_id)
