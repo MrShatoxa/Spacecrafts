@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% block content %}
+   <section id="information">
+       <div class="information_individual">
+           <div class="container">
+
+
+               <div class="row">
+                   <div class="col-lg-12">
+                       <div class="article_create">
+                           <div class ="title_edit"><h2>Редактирование статьи</h2></div>
+                             <form method="POST"  enctype="multipart/form-data">
+                            {% csrf_token %}
+                            <input class="article_content " type="file" name="myfile" value="{{ article.image }}">
+                            <input class="article_content" type="text" name="title"
+                                   placeholder="Название" size="70" value="{{ article.title }}"><br/>
+                            <textarea class='article_content'placeholder="Содержание" name="content" >{{ article.content }}</textarea><br/>
+                            <br/>
+                            <input id="submit" type="submit" value="Обновить">
+                        </form>
+                       </div>
+                   </div>
+               </div>
+           </div>
+       </div>
+   </section>
+
+{% endblock %}

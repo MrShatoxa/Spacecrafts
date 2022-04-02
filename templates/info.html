@@ -6,8 +6,19 @@
                <div class="row">
                  <div class="col-12">
                      <div class="individual" id="article">
-                          <div class="title_article"><h1>{{ article.title }}</h1></div>
+                          <div class="title_article">
+                              {% if article.image %}
+                                  <p> <img  src="{{ article.image.url }}"></p>
+                              {% else %}
+                                  <p></p>
+                              {% endif %}
+                              <h1>{{ article.title }}</h1>
+                          </div>
                          <div><p>{{ article.content }}</p></div>
+                       <div class="individual_links">
+                        <a href="fix_article">Редактировать статью</a>
+                        <a href="delete_article">Удалить статью</a>
+                       </div>
                      </div>
                  </div>
                </div>
@@ -15,8 +26,9 @@
                    <div class="col-lg-12">
                        <div class="article_create">
                            <div class ="title_edit"><h2>Создание статьи</h2></div>
-                             <form method="POST" action="edit_article/">
+                             <form method="POST" action="edit_article/" enctype="multipart/form-data">
                             {% csrf_token %}
+                            <input class="article_content " type="file" name="myfile">
                             <input class="article_content" type="text" name="title" placeholder="Название" size="70"><br/>
 
                                  <textarea class='article_content'placeholder="Содержание"  name="content"></textarea><br/>

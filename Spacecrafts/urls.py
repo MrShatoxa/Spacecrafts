@@ -15,7 +15,9 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from ReferenceBook.views import index, info, edit, create, delete, edit_article, fix
+from django.conf.urls.static import static
+from django.conf import settings
+from ReferenceBook.views import index, info, edit, create, delete, edit_article, fix, delete_article, fix_article
 
 urlpatterns = [
     path('', index, name='index'),
@@ -25,5 +27,10 @@ urlpatterns = [
     path('edit/create/', create),
     path('delete/<int:id>/', delete),
     path('info/<int:spacecrafts_id>/edit_article/', edit_article),
+    path('info/<int:spacecrafts_id>/fix_article/', fix_article),
+    path('info/<int:spacecrafts_id>/delete_article/', delete_article),
     path('fix/<int:id>/', fix),
 ]
+
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

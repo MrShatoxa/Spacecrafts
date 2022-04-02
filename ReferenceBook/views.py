@@ -44,6 +44,7 @@ def create(request):
         article.spacecrafts_id = spacecraft.id
         article.title = ""
         article.content = ""
+
         article.save()
     return HttpResponseRedirect("/")
 
@@ -83,9 +84,43 @@ def edit_article(request, spacecrafts_id):
         if request.method == "POST":
             article.title = request.POST.get("title")
             article.content = request.POST.get("content")
+            if request.FILES:
+                article.image = request.FILES['myfile']
+            else:
+                article.image = ""
             article.save()
             return HttpResponseRedirect("/")
         else:
             return render(request, "index.html", {"article": article})
     except Article.DoesNotExist:
         return HttpResponseNotFound("<h2>Статьи нет</h2>")
+
+def delete_article(request, spacecrafts_id):
+    try:
+        article = Article.objects.get(spacecrafts_id=spacecrafts_id)
+        article.image=""
+        article.title=""
+        article.content=""
+        article.save()
+        return HttpResponseRedirect("/")
+    except Article.DoesNotExist:
+        return HttpResponseNotFound("<h2>Такой статьи нет</h2>")
+
+def fix_article(request, spacecrafts_id):
+    try:
+        article = Article.objects.get(spacecrafts_id=spacecrafts_id)
+
+        if request.method == "POST":
+
+            if request.method == "POST":
+                article.title = request.POST.get("title")
+                article.content = request.POST.get("content")
+                if request.FILES:
+                    article.image = request.FILES['myfile']
+
+                article.save()
+            return HttpResponseRedirect("/")
+        else:
+            return render(request, "fixes_article.html", {"article": article})
+    except Article.DoesNotExist:
+        return HttpResponseNotFound("<h2>Такой статьи нет</h2>")
