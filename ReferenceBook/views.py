@@ -8,7 +8,7 @@ from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
 def index(request):
     space_crafts = Spacecrafts.objects.all()
-    paginator = Paginator(space_crafts, 5)
+    paginator = Paginator(space_crafts, 10)
     page = request.GET.get('page')
     page_obj = paginator.get_page(page)
     try:
