@@ -4,7 +4,7 @@ from ReferenceBook.models import Spacecrafts, Article
 from django.http import HttpResponseRedirect
 from django.http import HttpResponseNotFound
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
-
+from django.db.models import Q
 
 def index(request):
     space_crafts = Spacecrafts.objects.all()
@@ -124,3 +124,11 @@ def fix_article(request, spacecrafts_id):
             return render(request, "fixes_article.html", {"article": article})
     except Article.DoesNotExist:
         return HttpResponseNotFound("<h2>Такой статьи нет</h2>")
+
+def search(request):
+    if request.method == "GET":
+        query = request.GET.get('searcher')
+        object_list = Spacecrafts.objects.filter(Q(name__icontains=query) | Q(country__icontains=query)
+                                                 | Q(manufacturer__icontains=query) | Q(purpose__icontains=query)
+                                                 | Q(orbit__icontains=query) | Q(year__icontains=query))
+    return render(request, "search_results.html", {"object_list": object_list})

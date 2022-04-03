@@ -238,13 +238,48 @@ form input {
 .pagination{
     width: max-content;
     margin: 60px 0;
+    float: left;
 }
 .step-links {
     border-radius: 20px;
     background: whitesmoke;
 
 }
+.step-links a {
+     font-size: 28px;
+}
 .current{
   padding:0 10px;
   font-size: 22px;
+}
+
+.searching_form {
+    float: right;
+    margin: 60px 0;
+
+}
+.search_area{
+    border-radius: 20px;
+    padding: 0 5px;
+    font-size: 28px;
+    margin: 0;
+    width: 450px;
+}
+.search_button{
+    border-radius: 20px;
+    border: none;
+    font-size: 28px;
+    color: #1d2124;
+    letter-spacing:1.3px;
+    padding: 0 5px;
+    margin: 0;
+    position: relative;
+    display: block;
+    right: -350px;
+    top: -44px;
+}
+.search_button:hover {
+    background: #1b1e21;
+    color: #dae0e5;
+    border-radius:  15px;
 }

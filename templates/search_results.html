@@ -1,12 +1,11 @@
 {% extends 'base.html' %}
 {% block content %}
-
-   <section id="base">
+     <section id="base">
        <div class="base_db">
            <div class="container">
                <div class="row">
                    <div class="col-lg-12 col-md-12 col-sm-12 col-12">
-                       <table border="1" class="db_integration">
+                        <table border="1" class="db_integration">
                            <tr><th class="names_table">Название</th>
                                <th class="names_table">Страна</th>
                                <th class="names_table">Производитель</th>
@@ -15,24 +14,18 @@
                                <th class="names_table">Год запуска</th>
                                <th class="names_table">Изменить</th>
                                <th class="names_table">Удалить</th></tr>
-                           {% for item in page_obj %}
-                               <tr><td><a class="full_info" href="info/{{item.id}}">{{ item.name }}</a></td>
+                           {% for item in object_list %}
+                               <tr><td><a class="full_info" href="/info/{{item.id}}">{{ item.name }}</a></td>
                                    <td>{{item.country }}</td>
                                    <td>{{item.manufacturer }}</td>
                                    <td>{{item.purpose }}</td>
                                    <td>{{item.orbit }}</td><td>{{item.year }}</td>
-                                   <td><a class="icons" href="fix/{{item.id}}"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a></td>
-                                   <td><a class="icons" href="delete/{{item.id}}"><i class="fa fa-trash-o" aria-hidden="true"></i></a></td></tr>
+                                   <td><a class="icons" href="/fix/{{item.id}}"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a></td>
+                                   <td><a class="icons" href="/delete/{{item.id}}"><i class="fa fa-trash-o" aria-hidden="true"></i></a></td></tr>
                            {% endfor %}
                        </table>
-                       {% include "pagination.html" with page=posts %}
-                   <form action="{% url 'search' %}" method="get" class="searching_form">
-                    <input required class="search_area" name="searcher" type="search" placeholder="Поиск...">
-                    <input class="search_button" type="submit" value="Найти">
-                    </form>
                    </div>
                </div>
            </div>
-       </div>
-   </section>
+     </section>
 {% endblock %}

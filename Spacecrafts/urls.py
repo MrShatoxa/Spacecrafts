@@ -17,7 +17,7 @@ from django.contrib import admin
 from django.urls import path
 from django.conf.urls.static import static
 from django.conf import settings
-from ReferenceBook.views import index, info, edit, create, delete, edit_article, fix, delete_article, fix_article
+from ReferenceBook.views import index, info, edit, create, delete, edit_article, fix, delete_article, fix_article, search
 
 urlpatterns = [
     path('', index, name='index'),
@@ -30,6 +30,7 @@ urlpatterns = [
     path('info/<int:spacecrafts_id>/fix_article/', fix_article),
     path('info/<int:spacecrafts_id>/delete_article/', delete_article),
     path('fix/<int:id>/', fix),
+    path('search/',search, name='search'),
 ]
 
 if settings.DEBUG:
